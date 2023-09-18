@@ -40,19 +40,19 @@ SECRET_KEY = 'django-insecure-ucvl&)%j7^vd-(6vlbcws@xj$tzkr5h9aun+^3bbg2tp!42to9
 
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
-# sentry_sdk.init(
-#     dsn=os.getenv('DNS'),
-#     integrations=[DjangoIntegration()],
+sentry_sdk.init(
+    dsn=os.getenv('DNS'),
+    integrations=[DjangoIntegration()],
 
-#     # Set traces_sample_rate to 1.0 to capture 100%
-#     # of transactions for performance monitoring.
-#     # We recommend adjusting this value in production.
-#     # traces_sample_rate=1.0,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    # traces_sample_rate=1.0,
 
-#     # If you wish to associate users to errors (assuming you are using
-#     # django.contrib.auth) you may enable sending PII data.
-#     send_default_pii=False
-# )
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=False
+)
 
 DEBUG = True
 # DEBUG = os.getenv('DEBUG')
@@ -130,41 +130,41 @@ TEMPLATES = [
     },
 ]
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#         'LOCATION': 'lomofy_cache',
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'lomofy_cache',
+    }
+}
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'class': 'logging.StreamHandler',
-#         },
-#     },
-#     'root': {
-#         'handlers': ['console'],
-#         'level': 'WARNING',
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}
 
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django_redis.cache.RedisCache",
-#         "LOCATION": "redis://127.0.0.1:6379/1",
-#         "OPTIONS": {
-#             "CLIENT_CLASS": "django_redis.client.DefaultClient"
-#         },
-#         "KEY_PREFIX": "example"
-#     }
-# }
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "example"
+    }
+}
 
-# INTERNAL_IPS = [
-#     '127.0.0.1',
-# ]
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 SITE_ID = 1
 WSGI_APPLICATION = 'Project.wsgi.application'
@@ -249,30 +249,30 @@ CART_SESSION_ID = 'cart'
 SESSION_COOKIE_AGE = 86400  # 24 hours in seconds
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
-# # Celery Configurations
-# CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
-# # CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
-# CELERY_RESULT_BACKEND = 'django-db'
-# CELERY_ACCEPT_CONTENT = ['application/json']
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
-# CELERY_TIMEZONE = os.getenv('TIME_ZONE')
+# Celery Configurations
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = os.getenv('TIME_ZONE')
 
-# LOGIN_URL = 'customer_sign_in'
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_URL = 'customer_sign_out'
-# LOGOUT_REDIRECT_URL = 'customer_sign_in'
+LOGIN_URL = 'customer_sign_in'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = 'customer_sign_out'
+LOGOUT_REDIRECT_URL = 'customer_sign_in'
 
-# # Security Principles
-# SECURE_SSL_REDIRECT = True
-# HOST_SCHEME  = "http://"
-# SESSION_COOKIE_SECURE = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# CSRF_COOKIE_SECURE = True
+# Security Principles
+SECURE_SSL_REDIRECT = True
+HOST_SCHEME  = "http://"
+SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_SECURE = True
 
 # Activate Django-Heroku.
 # if 'HEROKU' in os.environ:
