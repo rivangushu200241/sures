@@ -175,12 +175,23 @@ AUTH_USER_MODEL = "customers.User"
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'Cmg7fnTWa3YOt14ZBnDX',
+        'HOST': 'containers-us-west-198.railway.app',
+        'PORT': '7295',
     }
 }
+#native-juice
 
 
 AUTH_PASSWORD_VALIDATORS = [
