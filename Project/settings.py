@@ -214,8 +214,10 @@ STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -262,6 +264,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # CSRF_COOKIE_SECURE = True
 
 # Activate Django-Heroku.
-if 'HEROKU' in os.environ:
-    import django_heroku
-    django_heroku.settings(locals())
+# if 'HEROKU' in os.environ:
+#     import django_heroku
+#     django_heroku.settings(locals())
